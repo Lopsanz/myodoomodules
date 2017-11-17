@@ -1,2 +1,3 @@
 # myodoomodules
-Repositorio para prácticas curso odoo
+Repositorio para prácticas curso od
+º

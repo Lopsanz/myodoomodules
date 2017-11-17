@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <!-- window action -->
+        <!--
+            The following tag is an action definition for a "window action",
+            that is an action opening a view or a set of views
+        -->
+        <template id="instance_css" name="people assets" inherit_id="web.assets_backend">
+            <xpath expr="." position="inside">
+                <link rel="stylesheet" href="/myodoo_instance/static/src/instance.css"/>
+
+            </xpath>
+        </template>
+
+
+        <record model="ir.actions.act_window" id="instance_list_action">
+            <field name="name">Instances</field>
+            <field name="res_model">myodoo.instance</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">Create the first instance
+                </p>
+            </field>
+        </record>
+
+        <!-- top level menu: no parent -->
+        <menuitem id="main_instances_menu" name="Instances"/>
+        <!-- A first level in the left side menu is needed
+             before using action= attribute -->
+        <menuitem id="instancesmenu" name="Instances"
+                  parent="main_instances_menu"/>
+        <!-- the following menuitem should appear *after*
+             its parent openacademy_menu and *after* its
+             action course_list_action -->
+        <menuitem id="instance_menu" name="Instance" parent="instancesmenu"
+                  action="instance_list_action"/>
+        <!-- Full id location:
+             action="openacademy.course_list_action"
+             It is not required when it is the same module -->
+        <record model="ir.ui.view" id="instance_tree_view">
+            <field name="name">instance.tree</field>
+            <field name="model">myodoo.instance</field>
+            <field name="arch" type="xml">
+                <tree string="Instance Tree">
+                    <field name="name"/>
+                    <field name="description"/>
+                    <field name="client_id"/>
+                    <field name="ip"/>
+                    <field name="version"/>
+                    <field name="status"/>
+
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="instance_form_view">
+            <field name="name">instance.kanban</field>
+            <field name="model">myodoo.instance</field>
+            <field name="arch" type="xml">
+                <form>
+                    <group>
+                        <field name="name"/>
+                        <field name="description"/>
+                        <field name="client_id"/>
+                        <field name="ip"/>
+                        <field name="version"/>
+                        <field name="status"/>
+                        <field name="backend_login"/>
+                        <field name="backend_password" password="True"/>
+                        <field name="postgres_login"/>
+                        <field name="postgres_password" password="True"/>
+                        <field name="ssh_login"/>
+                        <field name="ssh_password" password="True"/>
+                    </group>
+                </form>
+            </field>
+        </record>
+    </data>
+</odoo>
