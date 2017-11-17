@@ -6,7 +6,7 @@
     'category': 'Project',
     'summary': 'Practice module for management of customer instances of Odoo',
     'website': 'http://www.sdi.es',
-    'version': '0.1',
+    'version': '0.2',
     'description': """
 Instances Management
 ====================
