@@ -11,27 +11,28 @@
                         <field name="id"/>
                     </header>
                     <group>
-                    <field name="res_partner_id"/>
-                    <field name="name"/>
-                    <field name="active"/>
-                    <field name="ip_address"/>
-                    <field name="version"/>
-                    <field name="domain"/>
-                    <field name="alive"/>
-                    <group>
-                        <field name="ssh_login"/>
-                        <field name="ssh_pwd"/>
-                    </group>
-                    <group>
-                        <field name="backend_login"/>
-                        <field name="backend_pwd"/>
-                    </group>
-                    <group>
-                        <field name="postgresql_login"/>
-                        <field name="postgresql_pwd"/>
-                    </group>
-                    <group>
-                        <field name="description"/>
+                        <field name="res_partner_id"/>
+                        <field name="name"/>
+                        <field name="active"/>
+                        <field name="ip_address"/>
+                        <field name="version"/>
+                        <field name="domain"/>
+                        <field name="alive"/>
+                        <group>
+                            <field name="ssh_login"/>
+                            <field name="ssh_pwd"/>
+                        </group>
+                        <group>
+                            <field name="backend_login"/>
+                            <field name="backend_pwd"/>
+                        </group>
+                        <group>
+                            <field name="postgresql_login"/>
+                            <field name="postgresql_pwd"/>
+                        </group>
+                        <group>
+                            <field name="description"/>
+                        </group>
                     </group>
                 </form>
             </field>

@@ -21,8 +21,8 @@ class Instance(models.Model):
         string = "IP Address"
     )
     version = fields.Selection([
-        ('8.0', '8.0'),
         ('10.0', '10.0'),
+        ('8.0', '8.0'),
         ('11.0', '11.0'),
         ]
     )
@@ -35,7 +35,12 @@ class Instance(models.Model):
     #machine_id = fields.Many2one(
     #    "machine"
     #)
-    alive = fields.Boolean( string="Is online",  )
+    status = fields.Selection(
+        [('down',"Down"),
+         ('starting',"Starting"),
+         ('up', 'Up')  ],
+        string="Status"  )
+
     description = fields.Text(
         "About this Instance"
     )
